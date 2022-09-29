@@ -1,10 +1,17 @@
 /**
  * Documentation Comments
  */
+/**
+ *  Juhul kui vaja midagi debuggida, siis selleks all kirjutatud pisike koodiriba.
+ */
+// "use strict";
+// const ps = require("prompt-sync");
+// const prompt = ps();
 
-console.log("Row 1")
-console.log("Row 2")
-console.log("Row 3")
+
+// console.log("Row 1")
+// console.log("Row 2")
+// console.log("Row 3")
 
 //One line comment
 
@@ -148,7 +155,7 @@ if(istekoht==='loos'){
             console.log('Istekoht loositi. Aknakoht!')
             break
     }
-}*/
+}
 
 //Ülesanne 2.5
 
@@ -159,8 +166,7 @@ let kirjaLisa;
 function isFloat(value) {
     if (
         typeof value === 'number' &&
-        !Number.isNaN(value) &&
-        !Number.isInteger(value)
+        !Number.isNaN(value)
     ) {
         return true;
     }
@@ -168,13 +174,58 @@ function isFloat(value) {
     return false;
 }
 
-while (isFloat(kirjaSuurus)){
-    kirjaSuurus = prompt('Sisestage kirja suurus:')
+while (!isFloat(kirjaSuurus)){
+    kirjaSuurus = parseFloat(prompt('Sisestage kirja suurus:'))
 }
 while (kirjaLisa !== 'jah' && kirjaLisa !== 'ei'){
     kirjaLisa= prompt('Kas kirjaga on kaasas fail?')
 }
-if(kirjaTeema||(kirjaLisa === 'jah' &&kirjaSuurus>1.0)){
+
+if(kirjaTeema.length ===0 || (kirjaLisa === 'jah' && kirjaSuurus > 1.0)){
     console.log('Kiri on späm.')
 }
-else console.log('Kiri ei ole späm.')
+else console.log('Kiri ei ole späm.');
+
+
+//ülesanne 3.1
+
+var kordus = prompt("Sisestage mitu korda äratada")
+while(kordus !== 0){
+    --kordus
+    console.log("Tõuse ja sära")
+}
+
+
+//Ülesanne 3.2
+
+var ringid = prompt("Sisesta ringide arv:")
+let i = 0
+let a = 0
+while(i<ringid){
+    ++i
+    if(i % 2 ===0){
+        a += i
+    }
+}
+console.log(`Porgandite koguarv on ${a}`)
+
+
+
+//Ülesanne 3.3
+
+var täringud = prompt("Täringute arv:")
+let i = 0
+while(i<täringud){
+    console.log(Math.floor(Math.random()*6)+1)
+    ++i
+}
+
+ */
+// Ülesanne 3.4
+
+let poialpoissid
+let ounad = 14
+
+while(poialpoissid<0 && poialpoissid>7 ){
+    poialpoissid = prompt("Mitu pöialpossi tahab õuna?")
+}

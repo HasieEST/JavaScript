@@ -223,9 +223,16 @@ while(i<täringud){
  */
 // Ülesanne 3.4
 
-let poialpoissid
+let poialpoissid= parseInt(prompt("Mitu pöialpossi tahab õuna?"))
 let ounad = 14
 
-while(poialpoissid<0 && poialpoissid>7 ){
-    poialpoissid = prompt("Mitu pöialpossi tahab õuna?")
+while(!((poialpoissid >= 0) && (poialpoissid <= 7))){
+    poialpoissid = parseInt(prompt("Mitu pöialpossi tahab õuna?"))
 }
+let antavOun
+for (let i = 0; i < poialpoissid ; i++) {
+    antavOun = Math.floor(Math.random()*2)+1
+    ounad -= antavOun
+    console.log(antavOun)
+}
+console.log(`Lumivalgekesele jäi ${ounad}`)
